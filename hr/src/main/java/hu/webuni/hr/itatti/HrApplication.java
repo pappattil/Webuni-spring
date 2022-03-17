@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import hu.webuni.hr.itatti.model.Employee;
+import hu.webuni.hr.itatti.service.DefaultEmployeeService;
+import hu.webuni.hr.itatti.service.EmployeeService;
 import hu.webuni.hr.itatti.service.SalaryService;
 
 
@@ -28,11 +31,13 @@ public class HrApplication implements CommandLineRunner{
 		Employee employee3 = new Employee(3L, "Jóska István", "Operátor", 400000, LocalDateTime.of(2018,05,01,13,00));
 		Employee employee4 = new Employee(4L, "Fiatal Ödön", "Adminisztrátor", 400000, LocalDateTime.of(2021,01,01,10,00));
 	
-		System.out.println(employee1.getName()+": "+salaryService.setNextMonthSalary(employee1));
-		System.out.println(employee2.getName()+": "+salaryService.setNextMonthSalary(employee2));
-		System.out.println(employee3.getName()+": "+salaryService.setNextMonthSalary(employee3));
-		System.out.println(employee4.getName()+": "+salaryService.setNextMonthSalary(employee4));
+		System.out.println(employee1.getName()+": "+salaryService.setNextMonthSalary(employee1)+" : "+employee1.getBegin().getYear());
+		System.out.println(employee2.getName()+": "+salaryService.setNextMonthSalary(employee2)+" : "+employee2.getBegin().getYear());
+		System.out.println(employee3.getName()+": "+salaryService.setNextMonthSalary(employee3)+" : "+employee3.getBegin().getYear());
+		System.out.println(employee4.getName()+": "+salaryService.setNextMonthSalary(employee4)+" : "+employee4.getBegin().getYear());
 				
 	}
+	
+	
 
 }

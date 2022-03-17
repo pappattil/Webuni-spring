@@ -1,7 +1,5 @@
 package hu.webuni.airport.service;
 
-import java.io.ObjectInputFilter.Config;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

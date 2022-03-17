@@ -8,14 +8,13 @@ import hu.webuni.hr.itatti.model.Employee;
 @Service
 public class SalaryService {
 	
-	SmartEmployeeService smartEmployeeService;
+	private EmployeeService employeeService;
 	
-	public SalaryService(SmartEmployeeService smartEmployee) {
-		super();
-		this.smartEmployeeService = smartEmployee;
+	public SalaryService(EmployeeService employeeService) {
+		this.employeeService = employeeService;
 	}
-	
+
 	public int setNextMonthSalary(Employee employee) {
-		return (int)(smartEmployeeService.getPayRaisePercent(employee)*0.01*employee.getSalary())+employee.getSalary();
+		return (int)(employeeService.getPayRaisePercent(employee)*0.01*employee.getSalary())+employee.getSalary();
 	}
 }
