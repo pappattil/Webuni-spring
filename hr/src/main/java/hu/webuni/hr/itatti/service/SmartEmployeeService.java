@@ -17,8 +17,8 @@ public class SmartEmployeeService implements EmployeeService  {
 	@Override
 	public int getPayRaisePercent(Employee employee) {
 		
-		double workYear = LocalDateTime.now().getYear()-employee.getBegin().getYear();
-
+		double workYear = (LocalDateTime.now().getYear()+(double)LocalDateTime.now().getMonthValue()/12)-(employee.getBegin().getYear()+(double)employee.getBegin().getMonthValue()/12);
+	
 		if (workYear < config.getSalary().getYear().getLow()) return (int)config.getSalary().getPercent().getLow();
 		else if (workYear < config.getSalary().getYear().getMid()) return (int)config.getSalary().getPercent().getMid();
 		else if (workYear <= config.getSalary().getYear().getHigh()) return (int)config.getSalary().getPercent().getHigh();
