@@ -8,13 +8,29 @@
 <h1>Welcome to the HR application!</h1> <br/><br/><br/>
 <h1>List of employees</h1><br/><br/>
 
-<ul>
-<li th:each="">
-<span th:text="">id</span>
-<span th:text=""">name</span>
-<span th:text=""">iata</span>
+<table border>
+<thead>
+<tr>
+	<th>ID</th>
+	<th>Name</th>
+	<th>Position</th>
+	<th>Salary</th>
+	<th>Begin Work Date</th>
+</tr>	
+</thead>
+<tbody>
+<tr th:each="employee: ${employees}">
+	<td th:text="${employee.id}">Id</td>
+	<td th:text="${employee.name}">Id</td>
+	<td th:text="${employee.position}">Id</td>
+	<td th:text="${employee.salary}">Id</td>
+	<td th:text="${employee.begin}">Id</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<h2>Add a new employee</h2><br/><br/>
 
-</li>
-</ul>
 </body>
 </html>
