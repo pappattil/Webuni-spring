@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import hu.webuni.hr.itatti.HrApplication;
 import hu.webuni.hr.itatti.dto.HrDto;
@@ -33,7 +34,15 @@ public class HrTLController {
 	@GetMapping("/")
 	public String listEmployee(Map<String, Object> model) {
 	model.put("employees", allEmployee);
-		return "index";
-		
+	model.put("newEmployee", new Employee());
+		return "index";	
 	}
+	
+	@PostMapping("/")
+	public String addEmployee(Employee employee){
+		allEmployee.add(employee);
+		return "redirect:/";
+	
+	}
+	
 }

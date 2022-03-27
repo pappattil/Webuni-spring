@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>Welcome to the HR application!</h1> <br/><br/><br/>
-<h1>List of employees</h1><br/><br/>
+<h1>List of employees</h1>
 
-<table border>
+<table border=3>
 <thead>
 <tr>
 	<th>ID</th>
@@ -31,6 +31,14 @@
 <br/>
 <br/>
 <h2>Add a new employee</h2><br/><br/>
+<form th:action="@{/}" method="post" th:object="${newEmployee}">
+	Id: <input th:field="*{id}" /><br/>
+	Name: <input th:field="*{name}" /><br/>
+	Position: <input th:field="*{position}" /><br/>
+	Salary: <input th:field="*{salary}" /><br/>
+	Begin Date: <input th:field="*{begin}" /><br/>
+	<input type="submit" value="Add" />
 
+</form>
 </body>
 </html>
