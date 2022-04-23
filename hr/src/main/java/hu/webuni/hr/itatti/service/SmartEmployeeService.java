@@ -9,7 +9,7 @@ import hu.webuni.hr.itatti.config.HrConfigProperties;
 import hu.webuni.hr.itatti.model.Employee;
 
 @Service
-public class SmartEmployeeService implements EmployeeService  {
+public class SmartEmployeeService extends AbstractEmployeeService {
 	
 	@Autowired
 	HrConfigProperties config;

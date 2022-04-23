@@ -7,11 +7,9 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import hu.webuni.hr.itatti.HrApplication;
-import hu.webuni.hr.itatti.dto.HrDto;
 import hu.webuni.hr.itatti.model.Employee;
 
 @Controller
@@ -42,6 +40,32 @@ public class HrTLController {
 	@PostMapping("/")
 	public String addEmployee(Employee employee){
 		allEmployee.add(employee);
+		return "redirect:/";
+	
+	}
+	@GetMapping("/delete/{id}")
+	public String deleteEmployee(@PathVariable long id){
+		allEmployee.removeIf(e -> e.getId().equals(id));
+		return "redirect:/";
+	
+	}
+	@GetMapping("/{id}")
+	public String editEmployee(@PathVariable long id,Map<String, Object> model){
+		Employee selectedEmployee = allEmployee.stream().filter(e -> e.getId().equals(id)).findFirst().get();
+		model.put("employee", selectedEmployee);
+		
+		return "/editEmployee";
+	
+	}
+	
+	@PostMapping("/updateEmployee")
+	public String updateEmployee(Employee employee){
+		for(int i=0; i< allEmployee.size(); i++) {
+			if(allEmployee.get(i).getId().equals(employee.getId())) {
+				allEmployee.set(i, employee);
+				break;
+		}
+	}
 		return "redirect:/";
 	
 	}

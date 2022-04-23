@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
+import hu.webuni.hr.itatti.config.HrConfigProperties;
 import hu.webuni.hr.itatti.model.Employee;
-import hu.webuni.hr.itatti.service.DefaultEmployeeService;
-import hu.webuni.hr.itatti.service.EmployeeService;
 import hu.webuni.hr.itatti.service.SalaryService;
 
 
@@ -19,6 +17,9 @@ public class HrApplication implements CommandLineRunner{
 
 	@Autowired
 	SalaryService salaryService;
+	
+	@Autowired
+	HrConfigProperties config;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(HrApplication.class, args);

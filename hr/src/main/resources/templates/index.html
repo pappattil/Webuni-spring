@@ -21,10 +21,11 @@
 <tbody>
 <tr th:each="employee: ${employees}">
 	<td th:text="${employee.id}">Id</td>
-	<td th:text="${employee.name}">Id</td>
-	<td th:text="${employee.position}">Id</td>
-	<td th:text="${employee.salary}">Id</td>
-	<td th:text="${employee.begin}">Id</td>
+	<td><a th:href="@{/{id}(id=${employee.id})}" th:text="${employee.name}"> name </a></td>
+	<td th:text="${employee.position}">position</td>
+	<td th:text="${employee.salary}">salary</td>
+	<td th:text="${employee.begin}">begin</td>
+	<td><a th:href="@{/delete/{id}(id=${employee.id})}" > Delete </a></td>
 </tr>
 </tbody>
 </table>

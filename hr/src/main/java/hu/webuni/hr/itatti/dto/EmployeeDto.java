@@ -2,19 +2,29 @@ package hu.webuni.hr.itatti.dto;
 
 import java.time.LocalDateTime;
 
-public class HrDto {
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Positive;
+
+public class EmployeeDto {
 	
-	private Long id;
+	private long id;
+	@NotEmpty
 	private String name;
+	@NotEmpty
 	private String position;
+	@Positive
 	private int salary;
+	@Past
 	private LocalDateTime begin;
 	
-	public HrDto() {
+	private CompanyDto company;
+	
+	public EmployeeDto() {
 		
 	}
 	
-	public HrDto(Long id, String name, String position, int salary, LocalDateTime begin) {
+	public EmployeeDto(Long id, String name, String position, int salary, LocalDateTime begin) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -24,7 +34,7 @@ public class HrDto {
 	}
 	
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 	public void setId(Long id) {
@@ -53,6 +63,14 @@ public class HrDto {
 	}
 	public void setBegin(LocalDateTime begin) {
 		this.begin = begin;
+	}
+
+	public CompanyDto getCompany() {
+		return company;
+	}
+
+	public void setCompany(CompanyDto company) {
+		this.company = company;
 	}
 	
 

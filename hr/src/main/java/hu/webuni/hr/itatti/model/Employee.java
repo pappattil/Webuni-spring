@@ -2,13 +2,32 @@ package hu.webuni.hr.itatti.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Employee {
+	
+	@Id
+	@GeneratedValue
 	private Long id;
+	
 	private String name;
 	private String position;
 	private int salary;
 	private LocalDateTime begin;
 	
+	@ManyToOne
+	private Company company;
+	
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 	public Employee(Long id,String name,String position,int salary,LocalDateTime begin){
 		this.id = id;
 		this.name = name;
