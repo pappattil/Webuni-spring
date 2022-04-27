@@ -11,8 +11,11 @@ import hu.webuni.hr.itatti.model.Employee;
 public interface EmployeeMapper {
 
 	List<EmployeeDto> employeesToDtos(List<Employee> employees);
-	EmployeeDto employeeToDto(Employee employee);
-	Employee dtoToEmployee (EmployeeDto employeeDto);
-	List<Employee> dtosToEmployees(List<EmployeeDto> employees);
 	
+	EmployeeDto employeeToDto(Employee employee);
+	
+	Employee dtoToEmployee (EmployeeDto employeeDto);
+	
+	List<Employee> dtosToEmployees(List<EmployeeDto> employees);
+		
 }

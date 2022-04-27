@@ -13,12 +13,10 @@ public class Employee {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
 	private String name;
 	private String position;
 	private int salary;
 	private LocalDateTime begin;
-	
 	@ManyToOne
 	private Company company;
 	

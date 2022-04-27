@@ -17,7 +17,6 @@ public class EmployeeDto {
 	private int salary;
 	@Past
 	private LocalDateTime begin;
-	
 	private CompanyDto company;
 	
 	public EmployeeDto() {
