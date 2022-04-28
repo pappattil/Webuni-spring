@@ -8,7 +8,7 @@ import hu.webuni.hr.itatti.model.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-	List<Employee> findBySalaryGreatherThan(Integer minSalary);
+	List<Employee> findBySalaryGreaterThan(Integer minSalary);
 	
 	
 	
