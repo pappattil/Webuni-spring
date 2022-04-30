@@ -68,7 +68,7 @@ public class CompanyController {
 	}
 	@PutMapping("/{id}")
 	public ResponseEntity <CompanyDto> modifyCompany(@PathVariable long id, @RequestBody CompanyDto companyDto) {
-		companyDto.setCopmpanyId(id);
+		companyDto.setId(id);
 		Company updatedCompany= companyService.update(companyMapper.dtoToCompany(companyDto));
 		if(updatedCompany==null) {
 			return ResponseEntity.notFound().build();
