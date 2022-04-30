@@ -43,7 +43,7 @@ public class EmployeeController {
 		if (minSalary == null) {
 			employees = employeeService.finAll();
 		}else{
-			employees = employeeRepository.findBySalaryGreatherThan(minSalary);
+			employees = employeeRepository.findBySalaryGreaterThan(minSalary);
 		}
 		return employeeMapper.employeesToDtos(employees);
 	}

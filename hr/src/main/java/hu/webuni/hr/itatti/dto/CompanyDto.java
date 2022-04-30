@@ -13,47 +13,47 @@ public class CompanyDto {
 	public CompanyDto() {	
 	}
 	
-	public CompanyDto(long copmpanyId, String companyName, int companyNumber, String companyAddress,
-			List<EmployeeDto> employeeList) {
+	public CompanyDto(long id, String name, int number, String address,
+			List<EmployeeDto> employees) {
 		super();
-		this.id = copmpanyId;
-		this.name = companyName;
-		this.number = companyNumber;
-		this.address = companyAddress;
-		this.employees = employeeList;
+		this.id = id;
+		this.name = name;
+		this.number = number;
+		this.address = address;
+		this.employees = employees;
 	}
 	
-	public List<EmployeeDto> getEmployeeList() {
+	public List<EmployeeDto> getEmployees() {
 		return employees;
 	}
 
-	public void setEmployeeList(List<EmployeeDto> employeeList) {
-		this.employees = employeeList;
+	public void setEmployees(List<EmployeeDto> employees) {
+		this.employees = employees;
 	}
 
-	public long getCopmpanyId() {
+	public long getId() {
 		return id;
 	}
-	public void setCopmpanyId(long copmpanyId) {
-		this.id = copmpanyId;
+	public void setId(long id) {
+		this.id = id;
 	}
-	public String getCompanyName() {
+	public String getName() {
 		return name;
 	}
-	public void setCompanyName(String companyName) {
-		this.name = companyName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public int getCompanyNumber() {
+	public int getNumber() {
 		return number;
 	}
-	public void setCompanyNumber(int companyNumber) {
-		this.number = companyNumber;
+	public void setNumber(int number) {
+		this.number = number;
 	}
-	public String getCompanyAddress() {
+	public String getAddress() {
 		return address;
 	}
-	public void setCompanyAddress(String companyAddress) {
-		this.address = companyAddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	

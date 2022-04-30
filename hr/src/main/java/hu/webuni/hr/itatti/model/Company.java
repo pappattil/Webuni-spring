@@ -25,10 +25,10 @@ public class Company {
 	}
 	
 	
-	public Company(Long id, int registrationNumber, String name, String address, List<Employee> employees) {
+	public Company(Long id, int number, String name, String address, List<Employee> employees) {
 		super();
 		this.id = id;
-		this.number = registrationNumber;
+		this.number = number;
 		this.name = name;
 		this.address = address;
 		this.employees = employees;
@@ -40,11 +40,11 @@ public class Company {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getRegistrationNumber() {
+	public int getNumber() {
 		return number;
 	}
-	public void setRegistrationNumber(int registrationNumber) {
-		this.number = registrationNumber;
+	public void setNumber(int number) {
+		this.number = number;
 	}
 	public String getName() {
 		return name;

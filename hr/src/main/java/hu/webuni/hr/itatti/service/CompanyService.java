@@ -69,7 +69,8 @@ public class CompanyService {
 		company.getEmployees().clear();
 		for (Employee employee : employees) {
 			company.addEmployee(employee);
-			employeeRepository.save(employee);
+			Employee savedEmployee = employeeRepository.save(employee);
+			employee.setId(savedEmployee.getId());
 		}
 		return company;
 	}
